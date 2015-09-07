@@ -1,0 +1,93 @@
+" VIM.
+" Not needed.
+set nocompatible
+" Temp.
+" No temp files.
+set nobackup
+set noswapfile
+set nowritebackup
+" UTF-8.
+" I want UTF-8 thanks.
+set encoding=utf-8
+set fileencodings=utf-8
+setglobal fileencoding=utf-8
+" Undo history.
+" Keep files changes.
+"let undo = expand('~/.myvimundo/')
+"if !isdirectory(undo)
+"        call mkdir(undo)
+"endif
+"set undofile
+"set undodir='~/.myvimundo/'
+" Plug.
+" Manage plugins.
+if empty(glob('~/.vim/autoload/plug.vim'))
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        autocmd VimEnter * PlugInstall
+endif
+" Plugs.
+" Source of plugins.
+call plug#begin('~/.vim/plugged/')
+Plug 'tpope/vim-surround'
+Plug 'nanotech/jellybeans.vim'
+Plug 'ntpeters/vim-better-whitespace'
+call plug#end()
+" Wrap.
+set wrap
+set linebreak
+" Numberline.
+set number
+" Hidden buffers.
+set hidden
+" Turnoff syntax.
+syntax off
+" Zero terminal colors.
+set t_Co=0
+"set t_Co=16
+"colorscheme jellybeans
+" Show incomplete commands.
+set showcmd
+" Read outside changes to files.
+set autoread
+" Automatically write file changes.
+set autowrite
+" Use spaces instead of using tabs.
+set expandtab
+set tabstop=2
+" Show matching bracket.
+set showmatch
+" Show 10 lines below current.
+set scrolloff=10
+" Save 1000 command histories.
+set history=1000
+" Numberline won't fill screen.
+set numberwidth=2
+" Allow proper use of backspace.
+set backspace=eol,start,indent
+" I have my own statusline taste.
+set statusline=
+set laststatus=2
+set statusline+=%R\ %H\ %W\ %M\ %n\ %Y\ %{strlen(&fileencoding)?&fileencoding:'...'}\ %F\ %=\ %c/%l/%L\ %P
+" Combine with the system clipboard.
+set clipboard=unnamedplus
+" Strip all the whitespaces on save.
+autocmd BufWritePre * StripWhitespace
+" Maps.
+inoremap jk <esc>
+inoremap <esc> <nop>
+" Leader.
+let mapleader = "\\"
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+" Search.
+nnoremap <leader>h :set hlsearch<cr>
+nnoremap <leader>hh :set nohlsearch<cr>
+" The VimRC.
+nnoremap <leader>v :e $MYVIMRC<cr>
+nnoremap <leader>vv :source $MYVIMRC<cr>
+" Relative linenumbers.
+nnoremap <leader>r :set relativenumber<cr>
+nnoremap <leader>rr :set norelativenumber<cr>
