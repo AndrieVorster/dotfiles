@@ -11,14 +11,6 @@ set nowritebackup
 set encoding=utf-8
 set fileencodings=utf-8
 setglobal fileencoding=utf-8
-" Undo history.
-" Keep files changes.
-"let undo = expand('~/.myvimundo/')
-"if !isdirectory(undo)
-"        call mkdir(undo)
-"endif
-"set undofile
-"set undodir='~/.myvimundo/'
 " Plug.
 " Manage plugins.
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -44,8 +36,6 @@ set hidden
 syntax off
 " Zero terminal colors.
 set t_Co=0
-"set t_Co=16
-"colorscheme jellybeans
 " Show incomplete commands.
 set showcmd
 " Read outside changes to files.
