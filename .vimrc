@@ -20,7 +20,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 " Plugs.
 " Source of plugins.
-call plug#begin('~/.vim/plugged/')
+call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ntpeters/vim-better-whitespace'

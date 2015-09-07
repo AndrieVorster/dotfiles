@@ -40,6 +40,8 @@ alias ll='ls --color=auto -al'
 alias lh='ls --color=auto -alh'
 # Grep:
 alias grep='grep --color=auto'
+# Ping:
+alias wifi='ping -c7 www.google.com'
 # Pacman:
 alias pmi='sudo pacman -S @'
 alias pmu='sudo pacman -Syyu'
