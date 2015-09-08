@@ -4,7 +4,6 @@
 PS1='\d \t; \u \H \w; \$: '
 # Set the defaults to Vim.
 export EDITOR=vim
-export MANPAGER=vim
 # GCC does support colors.
 export GCC_COLORS=1
 # Shopt some basic settings.
@@ -16,10 +15,8 @@ complete -cf man
 complete -cf sudo
 # Don't save duplicates in history.
 HISTCONTROL=ignoreboth
-
 # All aliases.
-alias s='sl'
-alias sl='while true; do sl; done'
+alias sl='while true; do sl && clear && sleep 1; done'
 # CD:
 alias -- -='cd -'
 alias -- ~='cd ~'
@@ -33,16 +30,18 @@ alias .6='cd ../../../../../..'
 alias v='vim'
 alias vd='vimdiff'
 # List:
-alias l='ls --color=auto'
-alias ls='ls --color=auto'
-alias la='ls --color=auto -a'
-alias ll='ls --color=auto -al'
-alias lh='ls --color=auto -alh'
+alias l='ls --color=always'
+alias ls='ls --color=always'
+alias la='ls --color=always -a'
+alias ll='ls --color=always -al'
+alias lh='ls --color=always -alh'
 # Grep:
 alias grep='grep --color=auto'
 # Ping:
 alias wifi='ping -c7 www.google.com'
+# Power:
+alias r='sudo reboot'
+alias p='sudo poweroff'
 # Pacman:
-alias pmi='sudo pacman -S @'
-alias pmu='sudo pacman -Syyu'
-alias aur='cd `mktemp -d` && bash <(curl meta.sh/aur) -si @'
+alias pacman='sudo pacman --color=always '
+alias aur-pacman='cd `mktemp -d` && bash <(curl meta.sh/aur) -si '

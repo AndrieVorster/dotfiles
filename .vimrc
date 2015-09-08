@@ -21,13 +21,16 @@ endif
 " Plugs.
 " Source of plugins.
 call plug#begin()
+Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'nanotech/jellybeans.vim'
 Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 " Wrap.
 set wrap
 set linebreak
+" Timeout.
+set ttimeout
+set ttimeoutlen=10
 " Numberline.
 set number
 " Hidden buffers.
@@ -72,6 +75,8 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
+" CtrlP.
+nnoremap <leader>p :CtrlP<cr>
 " Search.
 nnoremap <leader>h :set hlsearch<cr>
 nnoremap <leader>hh :set nohlsearch<cr>
