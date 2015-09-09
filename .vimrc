@@ -22,6 +22,7 @@ endif
 " Source of plugins.
 call plug#begin()
 Plug 'kien/ctrlp.vim'
+"Plug 'kovisoft/slimv'
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
@@ -86,3 +87,6 @@ nnoremap <leader>vv :source $MYVIMRC<cr>
 " Relative linenumbers.
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>rr :set norelativenumber<cr>
+
+
+"let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "sbcl --load ~/.vim/plugged/slimv/slime/start-swank.lisp" &'

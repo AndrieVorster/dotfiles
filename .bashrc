@@ -39,7 +39,8 @@ alias lh='ls --color=always -alh'
 alias grep='grep --color=auto'
 # Ping:
 alias wifi='ping -c7 www.google.com'
-# Power:
+# Close:
+alias e='exit'
 alias r='sudo reboot'
 alias p='sudo poweroff'
 # Pacman:
