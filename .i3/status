@@ -1,10 +1,10 @@
 general {
         interval = 1
+                output_format = "i3bar"
                 colors = true
                 color_bad = "#0000FF"
                 color_good = "#FFFFFF"
                 color_degraded = "#00FFFF"
-                output_format = "i3bar"
 }
 
 order += "tztime local"

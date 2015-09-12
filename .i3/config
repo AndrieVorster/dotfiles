@@ -17,6 +17,7 @@ font ttf:sans 12
 # Quick launch:
 bindsym $mod+q kill
 bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
