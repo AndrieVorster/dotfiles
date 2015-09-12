@@ -4,6 +4,8 @@ set $mod Mod4
 bindsym $mod+i reload
 # Safe i3 Restart:
 bindsym $mod+m restart
+# Modify floating:
+bindsym $mod+mouse floating_modifyer
 # Kill i3 And Xorg:
 bindsym $mod+e exec i3-msg exit
 #bindsym $mod+e exec "i3-nagbar -t warning -m 'Kill i3 and Xorg?' -b 'Y' 'i3-msg exit'"
