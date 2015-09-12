@@ -33,7 +33,7 @@ set wrap
 set linebreak
 " Timeout.
 set ttimeout
-set ttimeoutlen=10
+set ttimeoutlen=1
 " Numberline.
 set number
 " Hidden buffers.
