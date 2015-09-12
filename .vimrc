@@ -22,9 +22,10 @@ endif
 " Source of plugins.
 call plug#begin()
 Plug 'kien/ctrlp.vim'
-"Plug 'kovisoft/slimv'
 Plug 'tpope/vim-surround'
+Plug 'AndrieVorster/cursor'
 Plug 'ntpeters/vim-better-whitespace'
+"Plug 'altercation/vim-colors-solarized'
 call plug#end()
 " Wrap.
 set wrap
@@ -53,7 +54,7 @@ set tabstop=2
 set showmatch
 " Show 10 lines below current.
 set scrolloff=10
-" Save 1000 command histories.
+" Saves 1000 lines of history.
 set history=1000
 " Numberline won't fill screen.
 set numberwidth=2
@@ -87,4 +88,9 @@ nnoremap <leader>vv :source $MYVIMRC<cr>
 " Relative linenumbers.
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>rr :set norelativenumber<cr>
-"let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "sbcl --load ~/.vim/plugged/slimv/slime/start-swank.lisp" &'
+" Lisp.
+inoremap lp ()<esc>i
+" Perl.
+"inoremap plp print (, "\n");<esc>F(a
+"inoremap plb print (oct("0b"), "\n");<esc>Fba
+"inoremap pl #!/usr/bin/perl<esc>o<esc>xiuse warnings;<esc>o<esc>o

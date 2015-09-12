@@ -11,12 +11,14 @@ shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
 # This should be standard in bash.
-complete -cf man
-complete -cf sudo
+#complete -cf man
+#complete -cf sudo
 # Don't save duplicates in history.
 HISTCONTROL=ignoreboth
 # All aliases.
-alias sl='while true; do sl && clear && sleep 1; done'
+alias sl...='while true; do sl && clear && sleep 1; done'
+# CP:
+alias cp='rsync -a --progress'
 # CD:
 alias -- -='cd -'
 alias -- ~='cd ~'
@@ -29,6 +31,11 @@ alias .6='cd ../../../../../..'
 # Vim:
 alias v='vim'
 alias vd='vimdiff'
+# Perl:
+alias p='perl'
+# Lisp:
+alias l1='sbcl'
+alias l2='clisp'
 # List:
 alias l='ls --color=always'
 alias ls='ls --color=always'
@@ -40,9 +47,8 @@ alias grep='grep --color=auto'
 # Ping:
 alias wifi='ping -c7 www.google.com'
 # Close:
-alias e='exit'
-alias r='sudo reboot'
-alias p='sudo poweroff'
+alias rb='sudo reboot'
+alias po='sudo poweroff'
 # Pacman:
-alias pacman='sudo pacman --color=always '
-alias aur-pacman='cd `mktemp -d` && bash <(curl meta.sh/aur) -si '
+alias pacman='sudo pacman --color=always'
+alias aur-pacman='cd `mktemp -d` && bash <(curl meta.sh/aur) -si'
