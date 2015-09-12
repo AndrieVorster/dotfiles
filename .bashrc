@@ -38,7 +38,7 @@ alias vd='vimdiff'
 
 # Git:
 alias ga='git add --all'
-alias gm='git commit -m "..."'
+alias gc='git commit -m "..."'
 alias gp='git push -u origin master'
 
 # Perl:
