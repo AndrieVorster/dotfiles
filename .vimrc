@@ -24,6 +24,7 @@ call plug#begin()
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'AndrieVorster/cursor'
+Plug 'AndrieVorster/mappings'
 Plug 'ntpeters/vim-better-whitespace'
 "Plug 'altercation/vim-colors-solarized'
 call plug#end()
@@ -88,9 +89,3 @@ nnoremap <leader>vv :source $MYVIMRC<cr>
 " Relative linenumbers.
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>rr :set norelativenumber<cr>
-" Lisp.
-inoremap lp ()<esc>i
-" Perl.
-"inoremap plp print (, "\n");<esc>F(a
-"inoremap plb print (oct("0b"), "\n");<esc>Fba
-"inoremap pl #!/usr/bin/perl<esc>o<esc>xiuse warnings;<esc>o<esc>o
