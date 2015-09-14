@@ -38,6 +38,7 @@ bindsym $mod+Shift+l move right
 # Layout Settings:
 bindsym $mod+c split v
 bindsym $mod+v split h
+workspace_layout tabbed
 bindsym $mod+t layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+x layout toggle split
