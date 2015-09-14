@@ -26,7 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'AndrieVorster/cursor'
 Plug 'AndrieVorster/mappings'
 Plug 'ntpeters/vim-better-whitespace'
-"Plug 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 " Wrap.
 set wrap
@@ -38,10 +38,26 @@ set ttimeoutlen=1
 set number
 " Hidden buffers.
 set hidden
-" Turnoff syntax.
-syntax off
-" Zero terminal colors.
-set t_Co=0
+" Syntax and colorscheme.
+if has('gui_running')
+        syntax on
+        set background=dark
+        colorscheme solarized
+        set guifontname=Inconsolata\ Italic\ 16
+elseif &term =~? 'xterm-256color'
+        syntax on
+        set t_Co=256
+        set background=dark
+        colorscheme solarized
+elseif &term =~? 'rxvt-unicode-256color'
+        syntax on
+        set t_Co=256
+        set background=dark
+        colorscheme solarized
+else
+        syntax off
+        set t_Co=0
+endif
 " Show incomplete commands.
 set showcmd
 " Read outside changes to files.
