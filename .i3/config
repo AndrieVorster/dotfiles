@@ -12,7 +12,14 @@ bindsym $mod+e exec i3-msg exit
 
 # Font stuff:
 font ttf:sans 12
-#font xft:inconsolata 16
+#font oft:inconsolata 16
+
+# Colors: Class...      Border: Background:  Text:    Indicator:
+client.urgent           #000000   #800000   #ffffff    #ffffff
+client.focused          #000000   #4682B4   #ffffff    #ffffff
+client.unfocused        #000000   #708090   #ffffff    #ffffff
+client.placeholder      #000000   #ffffff   #ffffff    #ffffff
+client.focused_inactive #000000   #000080   #ffffff    #ffffff
 
 # Quick launch:
 bindsym $mod+q kill
