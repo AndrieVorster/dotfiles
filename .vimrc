@@ -38,6 +38,8 @@ set ttimeoutlen=1
 set number
 " Hidden buffers.
 set hidden
+" The cursor line.
+set cursorline
 " Syntax and colorscheme.
 if has('gui_running')
         syntax on
