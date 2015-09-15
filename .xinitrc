@@ -1,2 +1,2 @@
-[[ -f ~/.Xresources ]] && xrdb ~/.Xresources
+[[ -f ~/.xrc ]] && xrdb ~/.xrc
 exec i3

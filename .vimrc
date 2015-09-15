@@ -45,7 +45,7 @@ if has('gui_running')
         syntax on
         set background=dark
         colorscheme solarized
-        set guifontname=Inconsolata\ Italic\ 16
+        set gfn=Inconsolata\ Medium\ 14
 elseif &term =~? 'rxvt*'
         syntax on
         set t_Co=256

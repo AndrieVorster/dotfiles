@@ -1,8 +1,9 @@
+*font: xft:Inconsolata:size=14:hinting=true:antialias=true
+!*font: xft:Inconsolata:size=14:slant=italic:hinting=true:antialias=true
 
-
-! ©
-! http://ethanschoonover.com/solarized
-! Solarized color scheme for the X Window System
+! -©-.
+! http://ethanschoonover.com/solarized...
+! Solarized color scheme for the X Window System!
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
 #define S_red           #dc322f

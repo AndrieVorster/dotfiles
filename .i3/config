@@ -11,8 +11,7 @@ bindsym $mod+e exec i3-msg exit
 #bindsym $mod+e exec "i3-nagbar -t warning -m 'Kill i3 and Xorg?' -b 'Y' 'i3-msg exit'"
 
 # Font stuff:
-font ttf:sans 12
-#font oft:inconsolata 16
+font xft:Inconsolata Italic 10
 
 # Colors: Class...      Border: Background:  Text:    Indicator:
 client.urgent           #000000   #800000   #ffffff    #ffffff
@@ -98,7 +97,8 @@ mode "resize" {
 bar {
         mode hide
                 position top
+#position bottom
                 hidden_state hide
                 tray_output primary
-                status_command i3status -c $HOME/.i3/status
+                status_command i3status -c ~/.i3/status
 }
