@@ -36,11 +36,6 @@ alias -- ~='cd ~'
 alias v='vim'
 alias vd='vimdiff'
 
-# Git:
-alias ga='git add --all'
-alias gc='git commit -m "..."'
-alias gp='git push -u origin master'
-
 # Perl:
 alias p='perl'
 
