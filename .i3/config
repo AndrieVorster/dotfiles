@@ -22,10 +22,10 @@ client.focused_inactive #000000   #000080   #ffffff    #ffffff
 
 # Quick launch:
 bindsym $mod+q kill
+bindsym $mod+g exec --no-startup-id gvim
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Return exec --no-startup-id urxvt
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Change Focus:
 mouse_warping output
