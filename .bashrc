@@ -68,3 +68,6 @@ alias po='sudo poweroff'
 # Pacman:
 alias pacman='sudo pacman --color=always'
 alias aur-pacman='cd `mktemp -d` && bash <(curl meta.sh/aur) -si'
+
+# Colors:
+alias colors='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)'
