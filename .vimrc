@@ -31,6 +31,8 @@ call plug#end()
 " Wrap.
 set wrap
 set linebreak
+" Spell.
+set spell
 " Timeout.
 set ttimeout
 set ttimeoutlen=1
@@ -43,6 +45,8 @@ set cursorline
 " Syntax and colorscheme.
 if has('gui_running')
         syntax on
+        set guioptions=
+        set guioptions+=aci
         set background=dark
         colorscheme solarized
         set gfn=Inconsolata\ Medium\ 14
@@ -83,23 +87,3 @@ set clipboard=unnamedplus
 " Strip all the whitespaces on read/write.
 autocmd BufReadPre * StripWhitespace
 autocmd BufWritePre * StripWhitespace
-" Maps.
-inoremap jk <esc>
-inoremap <esc> <nop>
-" Leader.
-let mapleader = "\\"
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
-" CtrlP.
-nnoremap <leader>p :CtrlP<cr>
-" Search.
-nnoremap <leader>h :set hlsearch<cr>
-nnoremap <leader>hh :set nohlsearch<cr>
-" The VimRC.
-nnoremap <leader>v :e $MYVIMRC<cr>
-nnoremap <leader>vv :source $MYVIMRC<cr>
-" Relative linenumbers.
-nnoremap <leader>r :set relativenumber<cr>
-nnoremap <leader>rr :set norelativenumber<cr>
