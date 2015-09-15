@@ -46,12 +46,7 @@ if has('gui_running')
         set background=dark
         colorscheme solarized
         set guifontname=Inconsolata\ Italic\ 16
-elseif &term =~? 'xterm-256color'
-        syntax on
-        set t_Co=256
-        set background=dark
-        colorscheme solarized
-elseif &term =~? 'rxvt-unicode-256color'
+elseif &term =~? 'rxvt*'
         syntax on
         set t_Co=256
         set background=dark
@@ -85,7 +80,8 @@ set laststatus=2
 set statusline+=%R\ %H\ %W\ %M\ %n\ %Y\ %{strlen(&fileencoding)?&fileencoding:'...'}\ %F\ %=\ %c/%l/%L\ %P
 " Combine with the system clipboard.
 set clipboard=unnamedplus
-" Strip all the whitespaces on save.
+" Strip all the whitespaces on read/write.
+autocmd BufReadPre * StripWhitespace
 autocmd BufWritePre * StripWhitespace
 " Maps.
 inoremap jk <esc>
