@@ -1,5 +1,5 @@
-*font: xft:Inconsolata:size=14:hinting=true:antialias=true
-!*font: xft:Inconsolata:size=14:slant=italic:hinting=true:antialias=true
+*font: xft:Inconsolata:size=13:hinting=true:antialias=true
+!*font: xft:Inconsolata:size=13:slant=italic:hinting=true:antialias=true
 
 ! -©-.
 ! http://ethanschoonover.com/solarized...
