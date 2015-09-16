@@ -133,8 +133,8 @@ augroup END
 " n(path) = To change .viminfo path.
 "set viminfo=%,'100,\"100
 function! Cursorsave()
-        if line("'c") <= line("$")
-                normal! g`c
+        if line("'\"") <= line("$")
+                normal! g`"
                 return 1
         endif
 endfunction
