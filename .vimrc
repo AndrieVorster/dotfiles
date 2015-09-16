@@ -44,8 +44,6 @@ endif
 call plug#begin()
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'AndrieVorster/cursor'
-Plug 'AndrieVorster/mappings'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
@@ -53,7 +51,7 @@ call plug#end()
 " }}}
 " Syntax and Colors {{{
 if has('gui_running')
-" GUI {{{
+        " GUI {{{
         syntax on
         set guioptions=
         set guioptions+=aci
