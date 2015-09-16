@@ -43,7 +43,8 @@ alias ga='git add'
 alias gl='git log'
 alias glp='git log -p'
 alias gls='git log --stat'
-alias glpp='git log --pretty'
+alias glo='git log --oneline'
+alias glod='git log --oneline --decorate'
 # Move...
 alias gm='git mv'
 # Push...
@@ -57,7 +58,9 @@ alias gr='git rm'
 alias gs='git status'
 # Commit...
 alias gc='git commit -v'
-alias gca='git commit -av'
+alias gca='git commit -v --amend'
+# Remote...
+alias grso='git remote show origin'
 
 # Perl:
 alias p='perl'
