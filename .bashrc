@@ -36,6 +36,17 @@ alias -- ~='cd ~'
 alias v='vim'
 alias vd='vimdiff'
 
+# Git:
+alias ga='git add'
+# Diff...
+alias gd='git diff'
+alias gds='git diff --staged'
+# Delete...
+alias gr='git rm'
+# Commit...
+alias gc='git commit -v'
+alias gca='git commit -av'
+
 # Perl:
 alias p='perl'
 
