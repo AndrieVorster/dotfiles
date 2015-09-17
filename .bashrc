@@ -89,7 +89,7 @@ alias po='sudo poweroff'
 
 # Pacman:
 alias pkm='sudo pacman --color=always'
-alias pkmpo='sudo pacman --color=always -Rns $(pacman -Qtdq)'
+alias pkmro='sudo pacman --color=always -Rns $(pacman -Qtdq)'
 alias aurget='cd ~/aur/ && bash <(curl meta.sh/aur) -si'
 alias aursync='cd ~/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed'
 
