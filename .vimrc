@@ -123,6 +123,12 @@ augroup perlfiles
         autocmd FileType perl inoremap pfs #!/usr/bin/perl<esc>o<esc>xiuse warnings;<esc>o<esc>o
 augroup END
 " }}}
+" Bashfiles {{{
+augroup bashfiles
+        autocmd!
+        autocmd FileType sh setlocal foldmethod=marker
+augroup END
+" }}}
 " Save cursor {{{
 " % = Buffer list.
 " ' = For file marks.
