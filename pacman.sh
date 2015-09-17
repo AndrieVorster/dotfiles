@@ -1,37 +1,98 @@
 #!/bin/bash
-echo -e "::"
-# Settings:
+# Settings: {{{
 id=''
-if (( $EUID != 0 )); then
-        id='sudo'
-fi
-pm='pacman --color=always'
-
-# My welcome:
+pkm='pacman --color=always'
+[[ $EUID != 0 ]] && id="sudo"
+# }}}
+# My welcome: {{{
+echo -e "::"
+echo -e ":: Welcome..."
+echo -e "::"
 echo -e ":: Pacman Maintenance..."
+echo -e "::"
 echo -e ":: For Arch based distibutions..."
 echo -e "::"
-
-# The script:
-echo -e ":: Cleaning database..."
-$id $pm -Scc
-echo -e "::"
-
-echo -e ":: Updating database..."
-$id $pm -Syy
-echo -e "::"
-
-echo -e ":: Updating packages..."
-$id $pm -Suu
-echo -e "::"
-
-echo -e ":: Installing packages..."
-$id $pm -S base base-devel
-$id $pm -S git vim rxvt-unicode
-$id $pm -S i3 xorg dmenu chromium
-$id $pm -S alsa alsa-utils alsa-plugins
-echo -e "::"
-
-echo -e ":: Purging orphaned packages..."
-$id $pm -Rns $(pacman -Qtdq)
-echo -e "::"
+# }}}
+# Pacman Version: {{{
+echo -e ":: Pacman Version..."
+$id $pkm -V && echo -e "::"
+# }}}
+# Clean Database: {{{
+echo -n ":: Clean Database - [n/y]... "
+read pkm_cd
+[[ -z "$pkm_cd" ]] && pkm_cd="y"
+case $pkm_cd in
+        [yY]|[yY][eE][sS]) $id $pkm -Scc
+                ;;
+        *|[nN]|[nN][oO]) echo -e ":: Skipping..." && echo -e "::"
+                ;;
+esac
+# }}}
+# Update Database: {{{
+echo -n ":: Update Database - [n/y]... "
+read pkm_ud
+[[ -z "$pkm_ud" ]] && pkm_ud="y"
+case $pkm_ud in
+        [yY]|[yY][eE][sS]) $id $pkm -Syy
+                ;;
+        *|[nN]|[nN][oO]) echo -e ":: Skipping..." && echo -e "::"
+                ;;
+esac
+# }}}
+# Update Packages: {{{
+echo -n ":: Update Packages - [n/y]... "
+read pkm_up
+[[ -z "$pkm_up" ]] && pkm_up="y"
+case $pkm_up in
+        [yY]|[yY][eE][sS]) $id $pkm -Suu
+                ;;
+        *|[nN]|[nN][oO]) echo -e ":: Skipping..." && echo -e "::"
+                ;;
+esac
+# }}}
+# Install Packages: {{{
+while true
+do
+        echo -n ":: Install Packages - [n/y]... "
+        read pkm_ip
+        [[ -z "$pkm_ip" ]] && pkm_ip="y"
+        case $pkm_ip in
+                [yY]|[yY][eE][sS]) while true
+                do
+                        echo -n ":: Packages Selection - [n/g/l/w/b/x]... "
+                        read pkm_ps
+                        [[ -z "$pkm_ps" ]] && pkm_ps="y"
+                        case $pkm_ps in
+                                [gG]|[gG][aA][mM][eE]) $id $pkm -S --needed --noconfirm sl bsd-games
+                                        ;;
+                                [lL]|[lL][iI][sS][pP]) $id $pkm -S --needed --noconfirm sbcl cmucl clisp
+                                        ;;
+                                [wW]|[wW][iI][fF][iI]) $id $pkm -S --needed --noconfirm iw dialog ipw2200-fw wpa_actiond wpa_supplicant
+                                        ;;
+                                [bB]|[bB][aA][sS][eE]) $id $pkm -S --needed --noconfirm git vim base rsync base-devel alsa-utils alsa-plugins bash-completion
+                                        ;;
+                                [xX]|[xX][oO][rR][gG]) $id $pkm -S --needed --noconfirm i3 vlc xorg dmenu lilypond chromium libdvdcss rxvt-unicode ttf-inconsolata
+                                        ;;
+                                [nN]|[nN][oO][nN][eE]) echo -e ":: Skipping..." && echo -e "::" && break
+                                        ;;
+                                *|[yY]|[yY][eE][sS]) echo -e ":: Selection - [none/game/lisp/wifi/base/xorg]..." && echo -e "::"
+                                        ;;
+                        esac
+                done
+                ;;
+        [nN]|[nN][oO]) echo -e ":: Skipping..." && echo -e "::" && break
+                ;;
+esac
+done
+# }}}
+# Remove Orphan Packages: {{{
+echo -n ":: Remove Orphan Packages - [n/y]... "
+read pkm_rop
+[[ -z "$pkm_rop" ]] && pkm_rop="y"
+case $pkm_rop in
+        [yY]|[yY][eE][sS]) $id $pkm -Rns $(pacman -Qtdq)
+                ;;
+        *|[nN]|[nN][oO]) echo -e ":: Skipping..." && echo -e "::"
+                ;;
+esac
+# }}}
