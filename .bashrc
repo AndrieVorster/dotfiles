@@ -49,7 +49,6 @@ alias glod='git log --oneline --decorate'
 alias gm='git mv'
 # Push...
 alias gp='git push'
-alias gpom='git push -u origin master'
 # Diff...
 alias gd='git diff'
 alias gds='git diff --staged'
