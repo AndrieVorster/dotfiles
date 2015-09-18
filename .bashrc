@@ -68,6 +68,7 @@ alias p='perl'
 # Lisp:
 alias l1='sbcl'
 alias l2='clisp'
+alias l3='cmucl'
 
 # List:
 alias l='ls --color=always'
