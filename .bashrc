@@ -81,7 +81,7 @@ alias lh='ls --color=always -alh'
 alias grep='grep --color=auto'
 
 # Ping:
-alias wifi='ping -c7 www.google.com'
+alias ping='ping -c7 www.google.com'
 
 # Cheers:
 alias rb='sudo reboot'
