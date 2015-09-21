@@ -87,11 +87,5 @@ alias ping='ping -c7 www.google.com'
 alias rb='sudo reboot'
 alias po='sudo poweroff'
 
-# Pacman:
-alias pkm='sudo pacman --color=always'
-alias pkmro='sudo pacman --color=always -Rns $(pacman -Qtdq)'
-alias aurget='cd ~/aur/ && bash <(curl meta.sh/aur) -si'
-alias aursync='cd ~/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed'
-
 # Colors:
 alias colors='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)'
