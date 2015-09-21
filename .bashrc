@@ -4,6 +4,23 @@
 # Set the prompt look.
 PS1='\d \t; \u \H \w; \$: '
 
+# Fortune cheers you up!
+#echo -e ""
+#fortune -s
+#echo -e ""
+
+# Artificial Intelligence!
+echo -e ""
+echo -e "Q:  How did you get into artificial intelligence?"
+echo -e "A:  Seemed logical -- I didn't have any real intelligence."
+echo -e ""
+echo -e "Running Windows on a Pentium is like having a brand new Porsche but only
+be able to drive backwards with the handbrake on."
+echo -e ""
+
+# I don't want coredumps.
+ulimit -S -c 0
+
 # Set the defaults to Vim.
 export EDITOR=vim
 
@@ -12,8 +29,12 @@ export GCC_COLORS=1
 
 # Shopt some basic settings.
 shopt -s autocd
+shopt -s extglob
 shopt -s cdspell
+shopt -s checkhash
+shopt -s nocaseglob
 shopt -s checkwinsize
+shopt -s no_empty_cmd_completion
 
 # This should be standard in bash.
 complete -cf man
