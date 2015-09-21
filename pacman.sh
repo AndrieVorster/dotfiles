@@ -2,7 +2,15 @@
 # Settings: {{{
 id=''
 pkm='pacman --color=always'
-[[ $EUID != 0 ]] && id="sudo"
+[[ $EUID != 0 ]] && id='sudo'
+apkmi()
+{
+        mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && bash <(curl meta.sh/aur) -si --needed --noconfirm $*
+}
+apkmu()
+{
+        mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed --noconfirm
+}
 # }}}
 # My welcome: {{{
 echo -e "::"
@@ -44,7 +52,7 @@ echo -n ":: Update Packages - [n/y]... "
 read pkm_up
 [[ -z "$pkm_up" ]] && pkm_up="y"
 case $pkm_up in
-        [yY]|[yY][eE][sS]) $id $pkm -Suu
+        [yY]|[yY][eE][sS]) $id $pkm -Suu && apkmu
                 ;;
         *|[nN]|[nN][oO]) echo -e ":: Skipping..." && echo -e "::"
                 ;;
@@ -59,7 +67,7 @@ do
         case $pkm_ip in
                 [yY]|[yY][eE][sS]) while true
                 do
-                        echo -n ":: Packages Selection - [n/g/l/w/b/x]... "
+                        echo -n ":: Packages Selection - [n/g/l/w/b/x/m]... "
                         read pkm_ps
                         [[ -z "$pkm_ps" ]] && pkm_ps="y"
                         case $pkm_ps in
@@ -73,9 +81,11 @@ do
                                         ;;
                                 [xX]|[xX][oO][rR][gG]) $id $pkm -S --needed --noconfirm i3 vlc xorg dmenu lilypond chromium libdvdcss rxvt-unicode ttf-inconsolata
                                         ;;
+                                [mM]|[mM][uU][sS][iI][cC]) $id $pkm -S --needed --noconfirm lilypond && apkmi python-ly frescobaldi tango-icon-theme python-poppler-qt4
+                                        ;;
                                 [nN]|[nN][oO][nN][eE]) echo -e ":: Skipping..." && echo -e "::" && break
                                         ;;
-                                *|[yY]|[yY][eE][sS]) echo -e ":: Selection - [none/game/lisp/wifi/base/xorg]..." && echo -e "::"
+                                *|[yY]|[yY][eE][sS]) echo -e ":: Selection - [none/game/lisp/wifi/base/xorg/music]..." && echo -e "::"
                                         ;;
                         esac
                 done
