@@ -99,8 +99,8 @@ nnoremap <leader>rr :set norelativenumber<cr>
 " Spaces {{{
 augroup space
         autocmd!
-        autocmd BufReadPre * StripWhitespace
-        autocmd BufWritePre * StripWhitespace
+        autocmd BufRead * StripWhitespace
+        autocmd BufWrite * StripWhitespace
 augroup END
 " }}}
 " Vimfiles {{{
