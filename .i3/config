@@ -100,5 +100,5 @@ bar {
 #position bottom
                 hidden_state hide
                 tray_output primary
-                status_command i3status -c ~/.i3/status
+                status_command i3status -c $HOME/.i3/status
 }

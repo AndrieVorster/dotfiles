@@ -1,2 +1,2 @@
-[[ -f ~/.xrc ]] && xrdb ~/.xrc
+[[ -f $HOME/.xrc ]] && xrdb $HOME/.xrc
 exec i3

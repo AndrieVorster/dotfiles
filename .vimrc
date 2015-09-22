@@ -34,8 +34,8 @@ set statusline+=%R\ %H\ %W\ %M\ %n\ %Y\ %{strlen(&fileencoding)?&fileencoding:'.
 " }}}
 " Plug and Plugins {{{
 " Plug {{{
-if empty(glob('~/.vim/autoload/plug.vim'))
-        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob($HOME . '/.vim/autoload/plug.vim'))
+        silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
                                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         autocmd VimEnter * PlugInstall
 endif
