@@ -1,23 +1,28 @@
 #!/bin/bash
 
+# Welcome:
 echo -e "Dotfiles link script..."
-dotdirectory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )"
+dotdirectory="$(dirname "$(readlink -f "$0")")"
+
+# Dotfiles:
+echo -e "Linking from:"
+echo -e "$dotdirectory"
 
 # X:
-ln -sf ${dotdirectory}/.xrc $HOME/.xrc
-ln -sf ${dotdirectory}/.xinitrc $HOME/.xinitrc
+ln -fsv ${dotdirectory}/.xrc $HOME/.xrc
+ln -fsv ${dotdirectory}/.xinitrc $HOME/.xinitrc
 # i3:
-ln -sf ${dotdirectory}/.i3/ $HOME/.i3
+ln -fnsv ${dotdirectory}/.i3/ $HOME/.i3
 # Vim:
-ln -sf ${dotdirectory}/.vimrc $HOME/.vimrc
+ln -fsv ${dotdirectory}/.vimrc $HOME/.vimrc
 # Git:
-ln -sf ${dotdirectory}/.gitconfig $HOME/.gitconfig
+ln -fsv ${dotdirectory}/.gitconfig $HOME/.gitconfig
 # Bash:
-ln -sf ${dotdirectory}/.bashrc $HOME/.bashrc
-ln -sf ${dotdirectory}/.profile $HOME/.profile
-# Bin:
+ln -fsv ${dotdirectory}/.bashrc $HOME/.bashrc
+ln -fsv ${dotdirectory}/.profile $HOME/.profile
+# !:
 mkdir -p $HOME/bin/
 # Setup:
-ln -sf ${dotdirectory}/bin/setup.sh $HOME/bin/setup.sh
+ln -fsv ${dotdirectory}/setup.sh $HOME/bin/setup-tool
 # Pacman:
-ln -sf ${dotdirectory}/bin/pacman.sh $HOME/bin/pacman.sh
+ln -fsv ${dotdirectory}/pacman.sh $HOME/bin/pacman-tool
