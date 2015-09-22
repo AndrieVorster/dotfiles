@@ -40,11 +40,12 @@ shopt -s no_empty_cmd_completion
 complete -cf man
 complete -cf sudo
 
-# Don't save duplicates in history.
+# I have customized history settings.
 HISTCONTROL=ignoreboth
+export HISTFILE=$HOME/.history
 
 # All aliases.
-alias sl...='while true; do sl && clear && sleep 1; done'
+alias train='while true; do sl && clear && sleep 1; done'
 
 # CP:
 alias cp='rsync -a --progress'
@@ -56,32 +57,6 @@ alias -- ~='cd ~'
 # Vim:
 alias v='vim'
 alias vd='vimdiff'
-
-# Git:
-# Add...
-alias ga='git add'
-# Log...
-alias gl='git log'
-alias glp='git log -p'
-alias gls='git log --stat'
-alias glo='git log --oneline'
-alias glod='git log --oneline --decorate'
-# Move...
-alias gm='git mv'
-# Push...
-alias gp='git push'
-# Diff...
-alias gd='git diff'
-alias gds='git diff --staged'
-# Delete...
-alias gr='git rm'
-# Status...
-alias gs='git status'
-# Commit...
-alias gc='git commit -v'
-alias gca='git commit -v --amend'
-# Remote...
-alias grso='git remote show origin'
 
 # Perl:
 alias p='perl'
