@@ -104,6 +104,8 @@ alias grep='grep --color=auto'
 # Ping:
 alias ping='ping -c7 www.google.com'
 
+# MkDir:
+alias mkdir="mkdir -p"
 # Cheers:
 alias rb='sudo reboot'
 alias po='sudo poweroff'
