@@ -1,4 +1,10 @@
 # Bash...
+
+# PATH...
+# Before:
+#export PATH=$PATH:$HOME/bin
+# After:
+export PATH=$HOME/bin:$PATH
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 # Laptop...
 [[ $(whoami) = "apie" && $(tty) = "/dev/tty1" ]] && exec startx
