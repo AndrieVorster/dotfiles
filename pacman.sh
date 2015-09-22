@@ -71,7 +71,7 @@ do
                         read pkm_ps
                         [[ -z "$pkm_ps" ]] && pkm_ps="y"
                         case $pkm_ps in
-                                [gG]|[gG][aA][mM][eE]) $id $pkm -S --needed --noconfirm sl bsd-games
+                                [gG]|[gG][aA][mM][eE]) $id $pkm -S --needed --noconfirm sl lynis bsd-games fortune-mod
                                         ;;
                                 [lL]|[lL][iI][sS][pP]) $id $pkm -S --needed --noconfirm sbcl cmucl clisp
                                         ;;
