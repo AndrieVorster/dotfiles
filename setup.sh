@@ -23,6 +23,6 @@ ln -fsv ${dotdirectory}/.profile $HOME/.profile
 # !:
 mkdir -p $HOME/bin/
 # Setup:
-ln -fsv ${dotdirectory}/setup.sh $HOME/bin/setup-tool
+ln -fsv ${dotdirectory}/setup.sh $HOME/bin/matsetup
 # Pacman:
-ln -fsv ${dotdirectory}/pacman.sh $HOME/bin/pacman-tool
+ln -fsv ${dotdirectory}/pacman.sh $HOME/bin/matpacman
