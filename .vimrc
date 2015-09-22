@@ -1,3 +1,5 @@
+"/bin/vim
+"/bin/gvim
 " ... {{{
 set wrap
 set spell

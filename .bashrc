@@ -4,11 +4,6 @@
 # Set the prompt look.
 PS1='\d \t; \u \H \w; \$: '
 
-# Fortune cheers you up!
-#echo -e ""
-#fortune -s
-#echo -e ""
-
 # Artificial Intelligence!
 echo -e ""
 echo -e "Q:  How did you get into artificial intelligence?"
@@ -49,7 +44,6 @@ alias cp='rsync -a --progress'
 
 # CD:
 alias -- -='cd -'
-alias -- ~='cd ~'
 
 # Vim:
 alias v='vim'
