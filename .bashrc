@@ -44,9 +44,6 @@ complete -cf sudo
 HISTCONTROL=ignoreboth
 export HISTFILE=$HOME/.history
 
-# All aliases.
-alias train='while true; do sl && clear && sleep 1; done'
-
 # CP:
 alias cp='rsync -a --progress'
 
@@ -57,6 +54,22 @@ alias -- ~='cd ~'
 # Vim:
 alias v='vim'
 alias vd='vimdiff'
+
+# Git:
+alias gm='git mv'
+alias gr='git rm'
+alias ga='git add'
+alias gp='git push'
+alias gs='git status'
+
+alias gl='git log'
+alias glp='git log -p'
+alias gls='git log --stat'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gc='git commit -v'
+alias gca='git commit -v --amend'
+alias grso='git remote show origin'
 
 # Perl:
 alias p='perl'
@@ -85,5 +98,7 @@ alias mkdir="mkdir -p"
 alias rb='sudo reboot'
 alias po='sudo poweroff'
 
+# Train:
+alias train='while true; do sl && clear && sleep 1; done'
 # Colors:
 alias colors='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)'
