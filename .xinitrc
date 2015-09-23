@@ -1,2 +1,2 @@
-[[ -f $HOME/.xrc ]] && xrdb $HOME/.xrc
+[[ -f $HOME/.Xresources ]] && xrdb $HOME/.Xresources
 exec i3
