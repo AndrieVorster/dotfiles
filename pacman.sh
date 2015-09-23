@@ -80,7 +80,7 @@ do
                                         ;;
                                 [bB]|[bB][aA][sS][eE]) $id $pkmi -S git vim base rsync base-devel alsa-utils alsa-plugins bash-completion
                                         ;;
-                                [xX]|[xX][oO][rR][gG]) $id $pkmi -S i3 vlc xorg dmenu lilypond chromium libdvdcss rxvt-unicode ttf-inconsolata
+                                [xX]|[xX][oO][rR][gG]) $id $pkmi -S i3 vlc xorg dmenu culmus lilypond chromium libdvdcss rxvt-unicode ttf-inconsolata
                                         ;;
                                 [mM]|[mM][uU][sS][iI][cC]) $id $pkmi -S lilypond && apkmi python-ly frescobaldi tango-icon-theme python-poppler-qt4
                                         ;;
