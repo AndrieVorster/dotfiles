@@ -1,5 +1,4 @@
-"/bin/vim
-"/bin/gvim
+set nocp
 " ... {{{
 set wrap
 set spell
@@ -16,6 +15,7 @@ set cursorline
 set scrolloff=10
 set history=1000
 set numberwidth=2
+set foldmethod=marker
 set clipboard=unnamedplus
 set backspace=eol,start,indent
 " ~ {{{
@@ -45,6 +45,7 @@ endif
 " Plugins {{{
 call plug#begin()
 Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'altercation/vim-colors-solarized'
@@ -88,6 +89,8 @@ inoremap <esc> <nop>
 " Leader Mappings {{{
 let mapleader = "\\"
 nnoremap <leader>f :CtrlP<cr>
+nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>tt :TagbarClose<cr>
 nnoremap <leader>p :set paste<cr>
 nnoremap <leader>pp :set nopaste<cr>
 nnoremap <leader>h :set hlsearch<cr>
