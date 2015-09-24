@@ -1,15 +1,10 @@
+! Swap Control and Caps Lock...
 ! Remove...
-remove Mod4 = Super_L
 remove Lock = Caps_Lock
-remove Shift = Shift_R
 remove Control = Control_L
 ! Rebind...
-keysym Shift_R = Super_L
-keysym Super_L = Caps_Lock
-keysym Control_L = Caps_Lock
 keysym Caps_Lock = Control_L
+keysym Control_L = Caps_Lock
 ! Add...
-add Mod4 = Super_L
 add Lock = Caps_Lock
-add Shift = Shift_R
 add Control = Control_L
