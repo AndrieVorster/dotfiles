@@ -1,7 +1,12 @@
-! Swap Caps Lock and Left Control
+remove Mod4 = Super_L
+remove Shift = Shift_R
 remove Lock = Caps_Lock
 remove Control = Control_L
-keysym Control_L = Caps_Lock
+keysym Super_L = Shift_R
+keysym Shift_R = Super_L
 keysym Caps_Lock = Control_L
+keysym Control_L = Caps_Lock
+add Mod4 = Super_L
 add Lock = Caps_Lock
+add Shift = Shift_R
 add Control = Control_L
