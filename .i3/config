@@ -8,7 +8,7 @@ bindsym $mod+m restart
 bindsym $mod+mouse floating_modifyer
 # Kill i3 And Xorg:
 bindsym $mod+e exec i3-msg exit
-#bindsym $mod+e exec "i3-nagbar -t warning -m 'Kill i3 and Xorg?' -b 'Y' 'i3-msg exit'"
+#bindsym $mod+ exec "i3-nagbar -t warning -m 'Kill i3 and Xorg?' -b 'Y' 'i3-msg exit'"
 
 # Font stuff:
 font xft:Inconsolata Italic 10
@@ -22,10 +22,10 @@ client.focused_inactive #000000   #000080   #ffffff    #ffffff
 
 # Quick launch:
 bindsym $mod+q kill
-#bindsym $mod+ exec --no-startup-id gvim
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Tab exec --no-startup-id urxvt
+bindsym $mod+Enter exec --no-startup-id urxvt
 
 # Change Focus:
 mouse_warping output

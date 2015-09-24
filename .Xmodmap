@@ -1,11 +1,14 @@
+! Remove...
 remove Mod4 = Super_L
-remove Shift = Shift_R
 remove Lock = Caps_Lock
+remove Shift = Shift_R
 remove Control = Control_L
-keysym Super_L = Shift_R
+! Rebind...
+keysym Super_L = Super_L
 keysym Shift_R = Super_L
+keysym Control_L = Super_L
 keysym Caps_Lock = Control_L
-keysym Control_L = Caps_Lock
+! Add...
 add Mod4 = Super_L
 add Lock = Caps_Lock
 add Shift = Shift_R
