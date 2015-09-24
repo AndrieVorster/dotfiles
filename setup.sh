@@ -9,6 +9,7 @@ echo -e "Linking from:"
 echo -e "$dotdirectory"
 # X...
 ln -fsv ${dotdirectory}/.xinitrc $HOME/.xinitrc
+ln -fsv ${dotdirectory}/.Xmodmap $HOME/.Xmodmap
 ln -fsv ${dotdirectory}/.Xresources $HOME/.Xresources
 # i3...
 ln -fnsv ${dotdirectory}/.i3/ $HOME/.i3
