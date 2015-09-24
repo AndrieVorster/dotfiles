@@ -1,4 +1,4 @@
-set nocp " It's not needed because this file exists... But it's tradition to have it set!
+set nocp " It's not needed because this file exists... But it's tradition so I have to set it!
 " ... {{{
 set wrap
 set spell

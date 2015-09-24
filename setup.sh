@@ -1,9 +1,7 @@
 #!/bin/bash
-
 # Welcome:
 echo -e "Dotfiles link script..."
 dotdirectory="$(dirname "$(readlink -f "$0")")"
-
 # Dotfiles:
 echo -e "Linking from:"
 echo -e "$dotdirectory"
@@ -26,6 +24,7 @@ mkdir -p $HOME/bin/
 ln -fsv ${dotdirectory}/setup.sh $HOME/bin/mysetup
 # Pacman...
 ln -fsv ${dotdirectory}/pacman.sh $HOME/bin/mypacman
-
+# URxvt...
+ln -fnsv ${dotdirectory}/.urxvt/ $HOME/.urxvt
 # URxvt Font:
-if [ -f $HOME/.urxvt/ext/font-size ]; then echo -e "URxvt Font already exist..."; else curl -fLo $HOME/.urxvt/ext/font-size --create-dirs https://raw.githubusercontent.com/majutsushi/urxvt-font-size/master/font-size; fi
+if [ -f ${dotdirectory}/.urxvt/ext/font-size ]; then echo -e "URxvt Font already exist..."; else curl -fLo ${dotdirectory}/.urxvt/ext/font-size --create-dirs https://raw.githubusercontent.com/majutsushi/urxvt-font-size/master/font-size; fi
