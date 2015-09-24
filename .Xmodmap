@@ -4,9 +4,9 @@ remove Lock = Caps_Lock
 remove Shift = Shift_R
 remove Control = Control_L
 ! Rebind...
-keysym Super_L = Super_L
 keysym Shift_R = Super_L
-keysym Control_L = Super_L
+keysym Super_L = Caps_Lock
+keysym Control_L = Caps_Lock
 keysym Caps_Lock = Control_L
 ! Add...
 add Mod4 = Super_L

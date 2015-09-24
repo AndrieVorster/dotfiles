@@ -25,7 +25,6 @@ bindsym $mod+q kill
 bindsym $mod+b exec --no-startup-id chromium
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Tab exec --no-startup-id urxvt
-bindsym $mod+Enter exec --no-startup-id urxvt
 
 # Change Focus:
 mouse_warping output
