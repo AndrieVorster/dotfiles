@@ -1,4 +1,4 @@
-set nocp
+set nocp " It's not needed because this file exists... But it's tradition to have it set!
 " ... {{{
 set wrap
 set spell
@@ -15,7 +15,6 @@ set cursorline
 set scrolloff=10
 set history=1000
 set numberwidth=2
-set foldmethod=marker
 set clipboard=unnamedplus
 set backspace=eol,start,indent
 " ~ {{{
@@ -85,6 +84,8 @@ noremap <right> <nop>
 " Insert Mode {{{
 inoremap jk <esc>
 inoremap <esc> <nop>
+inoremap <expr> j pumvisible() ? '<C-n>' : 'j'
+inoremap <expr> k pumvisible() ? '<C-p>' : 'k'
 " }}}
 " Leader Mappings {{{
 let mapleader = "\\"
