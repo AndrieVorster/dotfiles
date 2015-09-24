@@ -4,18 +4,22 @@ set wrap
 set spell
 set number
 set hidden
+set noexrc
 set showcmd
 set autoread
+set incsearch
 set linebreak
 set autowrite
 set expandtab
 set tabstop=2
 set showmatch
 set cursorline
+set noerrorbells
 set scrolloff=10
 set history=1000
 set numberwidth=2
 set clipboard=unnamedplus
+set fileformats=unix,dos,mac
 set backspace=eol,start,indent
 " ~ {{{
 set nobackup
@@ -49,6 +53,11 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'altercation/vim-colors-solarized'
 call plug#end()
+" }}}
+" Plugin Settings {{{
+" CtrlP {{{
+let g:ctrlp_use_caching = 0
+" }}}
 " }}}
 " }}}
 " Syntax and Colors {{{
@@ -87,19 +96,24 @@ inoremap <esc> <nop>
 inoremap <expr> j pumvisible() ? '<C-n>' : 'j'
 inoremap <expr> k pumvisible() ? '<C-p>' : 'k'
 " }}}
+" Plugin Mode {{{
+nnoremap <silent> <c-p> :CtrlP<cr>
+nnoremap <silent> <c-t> :TagbarToggle<cr>
+" }}}
+" Command Mode {{{
+cnoremap w!! w !sudo tee % >/dev/null<cr>
+" }}}
 " Leader Mappings {{{
 let mapleader = "\\"
-nnoremap <leader>f :CtrlP<cr>
-nnoremap <leader>t :TagbarToggle<cr>
-nnoremap <leader>tt :TagbarClose<cr>
-nnoremap <leader>p :set paste<cr>
-nnoremap <leader>pp :set nopaste<cr>
+set pastetoggle=<c-i>
+nnoremap <leader>s gg=G
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>v :e $MYVIMRC<cr>
 nnoremap <leader>h :set hlsearch<cr>
-nnoremap <leader>hh :set nohlsearch<cr>
-nnoremap <leader>v :edit $MYVIMRC<cr>
-nnoremap <leader>vv :source $MYVIMRC<cr>
+nnoremap <leader>nh :set nohlsearch<cr>
 nnoremap <leader>r :set relativenumber<cr>
-nnoremap <leader>rr :set norelativenumber<cr>
+nnoremap <leader>nr :set norelativenumber<cr>
 " }}}
 " VIM POWER ==? autocmd {{{
 " Spaces {{{
@@ -112,6 +126,7 @@ augroup END
 " Vimfiles {{{
 augroup vimfiles
         autocmd!
+        autocmd BufWritePost $MYVIMRC source $MYVIMRC
         autocmd FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
