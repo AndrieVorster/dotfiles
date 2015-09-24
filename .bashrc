@@ -17,6 +17,7 @@ echo -e ""
 ulimit -S -c 0
 
 # Set the defaults to Vim.
+set -o emacs
 export EDITOR=vim
 
 # GCC does support colors.
