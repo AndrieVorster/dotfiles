@@ -4,7 +4,7 @@
 # Set the prompt look.
 PS1='\d \t; \u \H \w; \$: '
 
-# Artificial Intelligence!
+# Artificial Intelligence.
 echo -e ""
 echo -e "Q:  How did you get into artificial intelligence?"
 echo -e "A:  Seemed logical -- I didn't have any real intelligence."
@@ -12,6 +12,10 @@ echo -e ""
 echo -e "Running Windows on a Pentium is like having a brand new Porsche but only
 be able to drive backwards with the handbrake on."
 echo -e ""
+
+# Root or should I sudo.
+id=''
+[[ $EUID != 0 ]] && id='sudo'
 
 # I don't want coredumps.
 ulimit -S -c 0
@@ -89,11 +93,40 @@ alias ping='ping -c7 www.google.com'
 
 # MkDir:
 alias mkdir="mkdir -p"
+
 # Cheers:
 alias rb='sudo reboot'
 alias po='sudo poweroff'
 
 # Train:
 alias train='while true; do sl && clear && sleep 1; done'
+
+# Pacman:
+pkm='pacman --color=always'
+pkmq='pacman --noconfirm --color=always'
+pkmi='pacman --needed --noconfirm --color=always'
+apkmi()
+{
+        mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && bash <(curl meta.sh/aur) -si --needed --noconfirm $* && cd -
+}
+apkmu()
+{
+        mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed --noconfirm && cd -
+}
+alias apkmi=apkmi
+alias apkmu=apkmu
+alias pkm="$id $pkm"
+alias pkmi="$id $pkmi"
+alias pkmv="$id $pkm -V"
+alias pkmc="$id $pkm -Scc"
+alias pkmy="$id $pkm -Syy"
+alias pkmu="$id $pkm -Suu"
+alias pkmo="$id $pkm -Rns $(pacman -Qtdq)"
+alias pkmqv="$id $pkmq -V"
+alias pkmqc="$id $pkmq -Scc"
+alias pkmqy="$id $pkmq -Syy"
+alias pkmqu="$id $pkmq -Suu"
+alias pkmqo="$id $pkmq -Rns $(pacman -Qtdq)"
+
 # Colors:
 alias colors='(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)'
