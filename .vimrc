@@ -1,5 +1,7 @@
 " andrievorster@gmail.com
 " andrievorster.github.io
+" Andrie Vorster's '.vimrc'!
+" I don't plan on documenting a lot here!
 set nocp " It's not needed because this file exists... But it's tradition so I have to set it!
 " ? {{{
 "if has('nvim')
@@ -152,12 +154,21 @@ else
     syntax off
 endif
 " }}}
+" Modes {{{
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+" }}}
+" Visual Mode {{{
+vnoremap <Space> za
+" }}}
 " Normal Mode {{{
+nnoremap <Space> za
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-nnoremap <Space> za
 " }}}
 " Insert Mode {{{
 inoremap jk <esc>
@@ -181,17 +192,23 @@ iabbrev apvc <c-r>=strftime("© Andrie Vorster All Rights Reserved %Y")<cr>
 let mapleader = "\\"
 set pastetoggle=<c-i>
 nnoremap <leader>l `.
-nnoremap <leader>s 0gg=G
+nnoremap <leader>s gg0=G
 nnoremap <leader>q :q<cr>
+nnoremap <leader>Q :q!<cr>
 nnoremap <leader>w :w<cr>
+nnoremap <leader>W :w!<cr>
 nnoremap <leader>h :set hlsearch<cr>
 nnoremap <leader>nh :set nohlsearch<cr>
 nnoremap <leader>r :set relativenumber<cr>
 nnoremap <leader>nr :set norelativenumber<cr>
+" Line swapping
+nnoremap <leader>lca VxkP<cr>
+nnoremap <leader>lab kVxp<cr>
+nnoremap <leader>lba jVxkP<cr>
 " Quickly edit dot/settings files
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>eb :split $HOME/.bashrc<cr>
-nnoremap <leader>ed :split $HOME/.vimdictionary.utf-8.add<cr>
+nnoremap <leader>ed :split $HOME/vim/.vimdictionary.utf-8.add<cr>
 " }}}
 " VIM POWER ==? autocmd {{{
 " Save {{{
@@ -242,15 +259,22 @@ augroup END
 " \" = For register history.
 " n(path) = To change .viminfo path.
 "set viminfo=%,'100,\"100
-function! Cursorsave()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
-endfunction
 augroup cursorsave
     autocmd!
-    autocmd BufWinEnter * call Cursorsave()
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \     execute 'normal! g`"zvzz' |
+                \ endif
 augroup END
+"function! Cursorsave()
+"if line("'\"") <= line("$")
+"normal! g`"
+"return 1
+"endif
+"endfunction
+"augroup cursorsave
+"autocmd!
+"autocmd BufWinEnter * call Cursorsave()
+"augroup END
 " }}}
 " }}}
