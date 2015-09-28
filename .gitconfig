@@ -1,7 +1,7 @@
 [user]
-        name = Andrie Vorster
-        email = andrievorster@gmail.com
+    name = Andrie Vorster
+    email = andrievorster@gmail.com
 [core]
-        editor = vim
+    editor = vim
 [push]
-        default = simple
+    default = simple

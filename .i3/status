@@ -1,10 +1,10 @@
 general {
-        interval = 1
-                output_format = "i3bar"
-                colors = true
-                color_bad = "#0000FF"
-                color_good = "#FFFFFF"
-                color_degraded = "#00FFFF"
+    interval = 1
+        output_format = "i3bar"
+        colors = true
+        color_bad = "#0000FF"
+        color_good = "#FFFFFF"
+        color_degraded = "#00FFFF"
 }
 
 order += "tztime local"
@@ -18,38 +18,38 @@ order += "cpu_usage"
 order += "cpu_temperature 0"
 
 load {
-        format = "%1min"
+    format = "%1min"
 }
 disk "/" {
-        format = "%used, %free, %total"
+    format = "%used, %free, %total"
 }
 tztime local {
-        format = "%H:%M:%S %d/%m/%Y"
+    format = "%H:%M:%S %d/%m/%Y"
 }
 volume mic {
-        format = "Mic: %volume"
-                format_muted = "Mic: (%volume)"
-                device = "default"
-                mixer = "Mic"
+    format = "Mic: %volume"
+        format_muted = "Mic: (%volume)"
+        device = "default"
+        mixer = "Mic"
 }
 volume master {
-        format = "Master: %volume"
-                format_muted = "Master: (%volume)"
-                device = "default"
-                mixer = "Master"
+    format = "Master: %volume"
+        format_muted = "Master: (%volume)"
+        device = "default"
+        mixer = "Master"
 }
 wireless wlp1s7 {
-        format_up = "%ip, %essid, %bitrate, %quality"
-                format_down = "'''"
+    format_up = "%ip, %essid, %bitrate, %quality"
+        format_down = "'''"
 }
 ethernet enp1s12 {
-        format_up = "%ip %speed"
-                format_down = "||"
+    format_up = "%ip %speed"
+        format_down = "||"
 }
 cpu_usage {
-        format = "%usage"
+    format = "%usage"
 }
 cpu_temperature 0 {
-        format = "%degrees °C"
-                path = "/sys/class/thermal/thermal_zone0/temp"
+    format = "%degrees °C"
+        path = "/sys/class/thermal/thermal_zone0/temp"
 }

@@ -84,21 +84,21 @@ bindsym $mod+Shift+9 move container to workspace 9
 # Window Resinzing:
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym Escape mode "default"
-                bindsym Return mode "default"
+    bindsym Escape mode "default"
+        bindsym Return mode "default"
 
-                bindsym l resize grow width 10 px or 10 ppt
-                bindsym k resize grow height 10 px or 10 ppt
-                bindsym h resize shrink width 10 px or 10 ppt
-                bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
 }
 
 # i3 Bar:
 bar {
-        mode hide
-                position top
+    mode hide
+        position top
 #position bottom
-                hidden_state hide
-                tray_output primary
-                status_command i3status -c $HOME/.i3/status
+        hidden_state hide
+        tray_output primary
+        status_command i3status -c $HOME/.i3/status
 }

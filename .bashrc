@@ -13,10 +13,6 @@ echo -e "Running Windows on a Pentium is like having a brand new Porsche but onl
 be able to drive backwards with the handbrake on."
 echo -e ""
 
-# Root or should I sudo.
-id=''
-[[ $EUID != 0 ]] && id='sudo'
-
 # I don't want coredumps.
 ulimit -S -c 0
 
@@ -43,6 +39,10 @@ complete -cf sudo
 # I have customized history settings.
 HISTCONTROL=ignoreboth
 export HISTFILE=$HOME/.history
+
+# Am I root or should I sudo for permissions.
+id=''
+[[ $EUID != 0 ]] && id='sudo'
 
 # CP:
 alias cp='rsync -a --progress'
@@ -107,14 +107,24 @@ pkmq='pacman --noconfirm --color=always'
 pkmi='pacman --needed --noconfirm --color=always'
 apkmi()
 {
-        mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && bash <(curl meta.sh/aur) -si --needed --noconfirm $* && cd -
+    mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && bash <(curl meta.sh/aur) -si --needed $* && cd - && echo "APKMI: DONE!" && echo ""
+}
+apkmqi()
+{
+    mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && bash <(curl meta.sh/aur) -si --needed --noconfirm $* && cd - && echo "APKMI: DONE!" && echo ""
 }
 apkmu()
 {
-        mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed --noconfirm && cd -
+    mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed && cd - && echo "APKMI: DONE!" && echo ""
+}
+apkmqu()
+{
+    mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && pacman -Qqm | xargs bash <(curl meta.sh/aur) -si --needed --noconfirm && cd - && echo "APKMI: DONE!" && echo ""
 }
 alias apkmi=apkmi
+alias apkmqi=apkmqi
 alias apkmu=apkmu
+alias apkmqu=apkmqu
 alias pkm="$id $pkm"
 alias pkmi="$id $pkmi"
 alias pkmv="$id $pkm -V"
