@@ -69,6 +69,7 @@ alias gds='git diff --staged'
 alias gc='git commit -v'
 alias gca='git commit -v --amend'
 alias grso='git remote show origin'
+alias grh='git reset HEAD'
 
 # Perl:
 alias p='perl'
