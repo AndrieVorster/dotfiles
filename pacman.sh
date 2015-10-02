@@ -78,7 +78,7 @@ do
                     ;;
                 [wW]|[wW][iI][fF][iI]) $id $pkmi -S iw dialog ipw2200-fw wpa_actiond wpa_supplicant
                     ;;
-                [bB]|[bB][aA][sS][eE]) $id $pkmi -S git vim base rsync base-devel alsa-utils alsa-plugins bash-completion
+                [bB]|[bB][aA][sS][eE]) $id $pkmi -S git vim base rsync samba base-devel alsa-utils alsa-plugins bash-completion
                     ;;
                 [xX]|[xX][oO][rR][gG]) $id $pkmi -S i3 vlc xorg dmenu lilypond chromium libdvdcss rxvt-unicode ttf-inconsolata && apkmi culmus
                     ;;
