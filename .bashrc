@@ -45,7 +45,7 @@ id=''
 [[ $EUID != 0 ]] && id='sudo'
 
 # CP:
-alias cp='rsync -a --progress'
+alias cp='rsync -a -u --progress'
 
 # CD:
 alias -- -='cd -'
