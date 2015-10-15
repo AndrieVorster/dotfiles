@@ -79,6 +79,9 @@ alias l1='sbcl'
 alias l2='clisp'
 alias l3='cmucl'
 
+# Stat:
+alias lp="stat -c '%a %n'"
+
 # List:
 alias l='ls --color=always'
 alias ls='ls --color=always'
