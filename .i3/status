@@ -12,6 +12,7 @@ order += "volume mic"
 order += "volume master"
 order += "wireless wlp1s7"
 order += "ethernet enp1s12"
+order += "ethernet enp1s12"
 order += "load"
 order += "disk /"
 order += "cpu_usage"
@@ -44,12 +45,15 @@ wireless wlp1s7 {
 }
 ethernet enp1s12 {
     format_up = "%ip %speed"
-        format_down = "||"
-}
-cpu_usage {
-    format = "%usage"
-}
-cpu_temperature 0 {
-    format = "%degrees °C"
-        path = "/sys/class/thermal/thermal_zone0/temp"
-}
+        format_down = "|-|"
+        ethernet enp1s12 {
+            format_up = "%ip %speed"
+                format_down = "|-|"
+        }
+    cpu_usage {
+        format = "%usage"
+    }
+    cpu_temperature 0 {
+        format = "%degrees °C"
+            path = "/sys/class/thermal/thermal_zone0/temp"
+    }

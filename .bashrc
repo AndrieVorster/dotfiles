@@ -105,7 +105,8 @@ alias train='while true; do sl && clear && sleep 1; done'
 # Pacman:
 pkm='pacman --color=always'
 pkmq='pacman --noconfirm --color=always'
-pkmi='pacman --needed --noconfirm --color=always'
+pkmi='pacman --needed --color=always'
+pkmqi='pacman --needed --noconfirm --color=always'
 apkmi()
 {
     mkdir -p /var/cache/aur/ && cd /var/cache/aur/ && bash <(curl meta.sh/aur) -si --needed $* && cd - && echo "APKMI: DONE!" && echo ""
@@ -128,15 +129,18 @@ alias apkmu=apkmu
 alias apkmqu=apkmqu
 alias pkm="$id $pkm"
 alias pkmi="$id $pkmi -S"
+alias pkmqi="$id $pkmqi -S"
 alias pkmv="$id $pkm -V"
 alias pkmc="$id $pkm -Scc"
 alias pkmy="$id $pkm -Syy"
 alias pkmu="$id $pkm -Suu"
+alias pkmr="$id $pkm -Rns"
 alias pkmo="$id $pkm -Rns $(pacman -Qtdq)"
 alias pkmqv="$id $pkmq -V"
 alias pkmqc="$id $pkmq -Scc"
 alias pkmqy="$id $pkmq -Syy"
 alias pkmqu="$id $pkmq -Suu"
+alias pkmqr="$id $pkmq -Rns"
 alias pkmqo="$id $pkmq -Rns $(pacman -Qtdq)"
 
 # Colors:
