@@ -9,7 +9,7 @@ echo -e "Arch Linux Setup"
 echo -e ""
 # }}}
 # Internet {{{
-ip link
+iw dev
 echo -n "Enter the WIFI device name: "
 read a_wip
 [[ -z "$a_wip" ]] && a_wip="!"
@@ -19,6 +19,8 @@ case $a_wip in
     *) $id wifi-menu -o $a_wip
         ;;
 esac
+echo -e ""
+ping -c7 www.google.com
 echo -e ""
 ip link
 echo -n "Enter the DHCPCD device name: "
@@ -31,8 +33,10 @@ case $a_dip in
         ;;
 esac
 echo -e ""
+ping -c7 www.google.com
+echo -e ""
 # }}}
-# Time {{{
+# Time/Clock {{{
 timedatectl status
 echo -e ""
 timedatectl set-ntp true

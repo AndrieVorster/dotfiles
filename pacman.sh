@@ -74,7 +74,7 @@ do
             case $pkm_ps in
                 [gG]|[gG][aA][mM][eE]) $id $pkmi -S sl lynis bsd-games fortune-mod
                     ;;
-                [lL]|[lL][iI][sS][pP]) $id $pkmi -S sbcl cmucl clisp
+                [lL]|[lL][iI][sS][pP]) $id $pkmi -S sbcl clisp #cmucl
                     ;;
                 [wW]|[wW][iI][fF][iI]) $id $pkmi -S iw dialog ipw2200-fw wpa_actiond wpa_supplicant
                     ;;
